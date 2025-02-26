@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>תוכניות אימון קליסטניקס</title>
+    <style>
+      /* עיצוב כללי */
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: white;
+        direction: rtl;
+        text-align: right;
+      }
+
+      /* סרגל ניווט */
+      nav {
+        background-color: rgba(255, 87, 34, 0.9);
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      nav ul li a:hover {
+        color: #ffcc00;
+      }
+
+      /* כותרת ראשית */
+      #header-section {
+        text-align: center;
+        margin-top: 120px;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .h1-head {
+        font-size: 3em;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
+
+      /* תמונה מעוצבת */
+      .image-container {
+        text-align: center;
+        margin: 40px auto;
+      }
+
+      .image-container img {
+        width: 90%;
+        max-width: 800px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(255, 87, 34, 0.5);
+      }
+
+      /* עיצוב רספונסיבי */
+      @media (max-width: 768px) {
+        nav ul {
+          flex-wrap: wrap;
+        }
+        nav ul li {
+          margin: 10px;
+        }
+        .h1-head {
+          font-size: 2.5em;
+        }
+        .image-container img {
+          width: 95%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- סרגל ניווט -->
+    <nav>
+      <ul>
+        <li><a href="#programs">תוכניות אימון</a></li>
+        <li><a href="#products">מוצרים</a></li>
+        <li><a href="#about">על קליסטניקס</a></li>
+      </ul>
+    </nav>
+
+    <!-- כותרת ראשית -->
+    <div id="header-section">
+      <h1 class="h1-head">תוכניות אימון קליסטניקס</h1>
+      <p>באתר הזה תמצאו תוכניות אימון מקצועיות עם הסברים מפורטים.</p>
+    </div>
+
+    <!-- תמונה מעוצבת -->
+    <div class="image-container">
+      <img
+        src="https://hips.hearstapps.com/hmg-prod/images/img-0945-jpg-1638909378.jpg"
+        alt="אימון קליסטניקס"
+      />
+    </div>
+
+    <a href="./kosher-1.html">kosher1111</a>
+  </body>
+</html>
