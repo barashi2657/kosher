@@ -29,7 +29,6 @@
             z-index: 1000;
         }
 
-        /* פריטי התפריט */
         nav ul {
             list-style: none;
             padding: 0;
@@ -61,7 +60,7 @@
             position: relative;
             text-align: center;
             height: 100vh;
-            background: url('https://hips.hearstapps.com/hmg-prod/images/img-0945-jpg-1638909378.jpg') no-repeat center center;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBa8wdrluCQn73X7oRaxX9gOM9MFjzwu7Ogg&s') no-repeat center center;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -85,23 +84,45 @@
 
         /* כפתורים */
         .exercise-btn {
-            background-color: #4caf50;
             color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.4em;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-block;
-            margin: 20px;
+            padding: 40px 30px;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 12px;
             text-align: center;
+            display: inline-block;
             width: 100%;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 2px solid transparent;
+            margin: 15px 0;
+            background-image: url('path-to-your-image.jpg'); /* תמונה בכפתור */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
+        /* אפקט hover */
         .exercise-btn:hover {
-            background-color: #388e3c;
-            transform: scale(1.1);
+            transform: scale(1.05);
+            background-color: rgba(255, 87, 34, 1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffcc00;
+        }
+
+        /* כפתור כשיש אוברליי */
+        .exercise-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: -1;
         }
 
         /* כפתור לפתיחת התפריט */
@@ -112,35 +133,48 @@
             background-color: #ff5722;
             color: white;
             border: none;
-            font-size: 2.5em;
+            font-size: 1.5em;
             padding: 15px;
             border-radius: 50%;
             cursor: pointer;
             z-index: 1100;
-            transition: 0.3s;
         }
 
-        .menu-btn:hover {
-            background-color: #e64a19;
-            transform: scale(1.1);
-        }
-
-        /* התאמה למובייל */
+        /* רספונסיביות */
         @media (max-width: 768px) {
-            .exercise-btn {
-                font-size: 1.2em;
-                width: 90%;
-                margin: 15px 0;
+            body {
+                font-size: 16px;
             }
 
+            /* סרגל ניווט */
+            nav {
+                right: -250px; /* התפריט מוסתר */
+            }
+
+            /* כפתורים */
+            .exercise-btn {
+                font-size: 1.2em; /* הקטנה לגודל נוח יותר במובייל */
+                padding: 20px 25px; /* התאמת גודל הכפתור למובייל */
+                width: 90%; /* שימוש בשטח רחב יותר */
+            }
+
+            /* כותרת ראשית */
+            #header-section {
+                height: 60vh; /* צמצום גובה הכותרת במובייל */
+            }
+
+            .h1-head {
+                font-size: 2em; /* גודל טקסט קטן יותר למובייל */
+            }
+
+            /* סרגל ניווט במובייל */
             nav ul li a {
                 font-size: 1.2em;
             }
 
             .menu-btn {
-                font-size: 2em;
-                top: 10px;
-                right: 10px;
+                font-size: 1.8em; /* כפתור התפריט יהיה גדול יותר */
+                padding: 18px;
             }
         }
     </style>
@@ -170,10 +204,10 @@
     <!-- כפתורים -->
     <div class="content">
         <a href="kosher-1.html">
-            <button class="exercise-btn">אימון לפי קבוצות שרירים</button>
+            <button class="exercise-btn" style="background-image: url('muscle-group.jpg');">אימון לפי קבוצות שרירים</button>
         </a>
         <a href="kosher-2.html">
-            <button class="exercise-btn">אימון לתרגילים ספציפיים</button>
+            <button class="exercise-btn" style="background-image: url('specific-exercises.jpg');">אימון לתרגילים ספציפיים</button>
         </a>
     </div>
 
