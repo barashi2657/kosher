@@ -1,123 +1,163 @@
 <!DOCTYPE html>
 <html lang="he">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>תוכניות אימון קליסטניקס</title>
     <style>
-      /* עיצוב כללי */
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #121212;
-        color: white;
-        direction: rtl;
-        text-align: right;
-      }
+        /* עיצוב כללי */
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            direction: rtl;
+            text-align: right;
+        }
 
-      /* סרגל ניווט */
-      nav {
-        background-color: rgba(255, 87, 34, 0.9);
-        padding: 15px 0;
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
+        /* סרגל ניווט */
+        nav {
+            background-color: rgba(255, 87, 34, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
 
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-      }
-
-      nav ul li {
-        margin: 0 20px;
-      }
-
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2em;
-        cursor: pointer;
-      }
-
-      nav ul li a:hover {
-        color: #ffcc00;
-      }
-
-      /* כותרת ראשית */
-      #header-section {
-        text-align: center;
-        margin-top: 120px;
-        transition: opacity 0.5s ease-in-out;
-      }
-
-      .h1-head {
-        font-size: 3em;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      }
-
-      /* תמונה מעוצבת */
-      .image-container {
-        text-align: center;
-        margin: 40px auto;
-      }
-
-      .image-container img {
-        width: 90%;
-        max-width: 800px;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(255, 87, 34, 0.5);
-      }
-
-      /* עיצוב רספונסיבי */
-      @media (max-width: 768px) {
         nav ul {
-          flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* גורם לכפתורים להסתדר בשורה חדשה במסכים קטנים */
         }
+
         nav ul li {
-          margin: 10px;
+            margin: 0 15px;
         }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 8px 12px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        /* כותרת ראשית */
+        #header-section {
+            text-align: center;
+            margin-top: 140px;
+            transition: opacity 0.5s ease-in-out;
+            padding: 20px;
+        }
+
         .h1-head {
-          font-size: 2.5em;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
+        /* תמונה מעוצבת */
+        .image-container {
+            text-align: center;
+            margin: 40px auto;
+        }
+
         .image-container img {
-          width: 95%;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(255, 87, 34, 0.5);
         }
-      }
+
+        /* כפתור חזרה למעלה */
+        .back-to-top {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            transition: 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: #e64a19;
+        }
+
+        /* התאמה למובייל */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 8px;
+            }
+            .h1-head {
+                font-size: 2.5em;
+            }
+            .image-container img {
+                width: 95%;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <!-- סרגל ניווט -->
     <nav>
-      <ul>
-        <li><a href="#programs">תוכניות אימון</a></li>
-        <li><a href="#products">מוצרים</a></li>
-        <li><a href="#about">על קליסטניקס</a></li>
-      </ul>
+        <ul>
+            <li><a href="#programs">תוכניות אימון</a></li>
+            <li><a href="#products">מוצרים</a></li>
+            <li><a href="#about">על קליסטניקס</a></li>
+        </ul>
     </nav>
 
     <!-- כותרת ראשית -->
     <div id="header-section">
-      <h1 class="h1-head">תוכניות אימון קליסטניקס</h1>
-      <p>באתר הזה תמצאו תוכניות אימון מקצועיות עם הסברים מפורטים.</p>
+        <h1 class="h1-head">תוכניות אימון קליסטניקס</h1>
+        <p>באתר הזה תמצאו תוכניות אימון מקצועיות עם הסברים מפורטים.</p>
     </div>
 
     <!-- תמונה מעוצבת -->
     <div class="image-container">
-      <img
-        src="https://hips.hearstapps.com/hmg-prod/images/img-0945-jpg-1638909378.jpg"
-        alt="אימון קליסטניקס"
-      />
+        <img src="https://hips.hearstapps.com/hmg-prod/images/img-0945-jpg-1638909378.jpg" alt="אימון קליסטניקס">
     </div>
 
-    <a href="./kosher-1.html">kosher1111</a>
-  </body>
+    <!-- כפתור חזרה למעלה -->
+    <button class="back-to-top" onclick="scrollToTop()">↑ למעלה</button>
+
+    <script>
+        // הצגת כפתור חזרה למעלה כשגוללים
+        window.onscroll = function () {
+            let btn = document.querySelector(".back-to-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // גלילה למעלה
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
 </html>
