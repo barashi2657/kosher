@@ -1,98 +1,306 @@
 <!DOCTYPE html>
 <html lang="he">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>תוכניות אימון קליסטניקס</title>
-    <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>על קליסטניקס</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
       /* עיצוב כללי */
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #121212;
-        color: white;
-        direction: rtl;
-        text-align: right;
-      }
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+    direction: rtl;
+    text-align: right;
+}
 
-      /* סרגל ניווט */
-      nav {
-        background-color: rgba(255, 87, 34, 0.9);
-        padding: 15px 0;
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
+/* סרגל ניווט */
+nav {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(211, 47, 47, 0.9);
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
 
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-      }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-      nav ul li {
-        margin: 0 20px;
-      }
+nav ul li {
+    margin: 15px 0;
+}
 
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2em;
-        cursor: pointer;
-      }
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 10px;
+    transition: 0.3s;
+}
 
-      nav ul li a:hover {
-        color: #ffcc00;
-      }
+nav ul li a:hover {
+    color: #FF9800;
+}
 
-      /* כותרת ראשית */
-      #header-section {
-        text-align: center;
-        margin-top: 120px;
-        transition: opacity 0.5s ease-in-out;
-      }
+/* כותרת ראשית */
+#header-section {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBa8wdrluCQn73X7oRaxX9gOM9MFjzwu7Ogg&s') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 10px rgba(255, 152, 0, 0.7);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
 
-      .h1-head {
-        font-size: 3em;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      }
-      /* עיצוב רספונסיבי */
-      @media (max-width: 768px) {
-        nav ul {
-          flex-wrap: wrap;
+#header-section div {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.h1-head {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+/* כפתור תפריט */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #D32F2F;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    padding: 15px;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 1100;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #FF9800;
+}
+
+/* תוכן */
+.content-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.content-section h2 {
+    color: #FF9800;
+    font-size: 2.5em;
+}
+
+.content-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* קישורים */
+.link {
+    text-decoration: none;
+    color: #FF9800;
+    font-size: 2em;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* סגנונות נוספים */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* טופס צור קשר */
+.contact-form {
+    background: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #ff4500;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #ff4500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff5733;
+}
+ /* חלק התוכן */
+ .content-section {
+            padding: 40px;
+            text-align: right;
+            background-color: #222;
+            margin-top: 60px;
         }
-        nav ul li {
-          margin: 10px;
+
+        .content-section h2 {
+            color: #FF9800;
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
-        .h1-head {
-          font-size: 2.5em;
+
+        .content-section h3 {
+            color: #FF5733;
+            font-size: 2em;
+            margin-top: 30px;
         }
-        .image-container img {
-          width: 95%;
+
+        .content-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
         }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- סרגל ניווט -->
-    <nav>
-      <ul>
-        <li><a href="index.html">תוכניות אימון</a></li>
-        <li><a href="https://theroadto.co.il/collections/shop?srsltid=AfmBOorSux_3fxLk1wQfnH-k9syuGXQfQeNWeSabpyNdBWUeh6mvB1UJ">מוצרים</a></li>
-        <li><a href="kosher-o.html">על קליסטניקס</a></li>
-      </ul>
+
+        /* כפתור חזרה */
+        .back-btn {
+            display: inline-block;
+            background-color: #FF5733;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #FF9800;
+        }
+
+        /* תמונה עבור חלק התוכן */
+        .content-image {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+  </style>
+<body>
+    <button class="menu-btn" onclick="toggleNav()">☰</button>
+
+    <nav id="sideNav">
+        <ul>
+            <li><a href="index.html">תוכניות אימון</a></li>
+            <li><a href="shop.html">מוצרים</a></li>
+            <li><a href="about.html">על קליסטניקס</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
     </nav>
 
-    <!-- כותרת ראשית -->
-    <div id="header-section">
-      <h1 class="h1-head">קצת על קליסטניקס</h1>
+    <header id="header-section">
+        <div>
+            <h1 class="h1-head">על קליסטניקס</h1>
+            <p>כל מה שצריך לדעת על קליסטניקס וכיצד זה יכול לשפר את הכושר שלך.</p>
+        </div>
+    </header>
+
+    <div class="content-section">
+        <h2>מה זה קליסטניקס?</h2>
+        <p>קליסטניקס הוא אימון שמשתמש במשקל גוף לפיתוח כוח, יציבות וגמישות.</p>
     </div>
-  </body>
+
+    <!-- תוכן על קליסטניקס -->
+    <div class="content-section">
+      <h2>למה להתאמן דווקא קליסטניקס?</h2>
+      <p>קליסטניקס הוא סגנון אימון המסתמך על משקל הגוף שלך, בלי צורך בציוד יקר או חדר כושר. מדובר בשיטה פשוטה אך יעילה שמאפשרת לך לשפר את הכוח, הגמישות והיציבות בצורה טבעית ומאוזנת. קליסטניקס לא רק עוזר לך לשפר את מצבך הפיזי, אלא גם תורם לבריאות הנפשית שלך. אז למה כדאי לבחור בקליסטניקס?</p>
+
+      <h3>1. חיזוק כל קבוצות השרירים</h3>
+      <p>אימוני קליסטניקס מחזקים את כל קבוצות השרירים בגוף, ומסייעים ביציבה טובה יותר, יציבות משופרת והפחתת סיכון לפציעות. תרגילים כמו שכיבות סמיכה, חמש (הפלאנק) ומתח מבצעים עבודה משולבת על השרירים הגדולים והקטנים בגוף, כך שתוכל לפתח גוף מאוזן וחזק.</p>
+
+      <h3>2. חיסכון בזמן ובכסף</h3>
+      <p>קליסטניקס הוא אימון שניתן לבצע כמעט בכל מקום, בלי הצורך לחפש חדר כושר או לרכוש ציוד יקר. כל מה שאתה צריך הוא משקל הגוף שלך, ומעט מקום פנוי. זוהי שיטה חסכונית ויעילה שלא דורשת השקעה כספית גדולה.</p>
+
+      <h3>3. שיפור הגמישות והאיזון</h3>
+      <p>אימוני קליסטניקס אינם רק ממוקדים בכוח, אלא גם בגמישות ובאיזון. תרגולים כמו תרגילי פיתול ותרגילים מתקדמים עם הגוף כיחידה אחת, מאפשרים לך להיות גמיש ומאוזן יותר. גמישות טובה תסייע לך בתפקוד יומיומי ותמנע פציעות.</p>
+
+      <h3>4. הפחתת סיכון לפציעות</h3>
+      <p>בזכות העבודה עם משקל הגוף, יש פחות עומס על המפרקים בהשוואה לשימוש במכשירים עם משקל נוסף. כל תרגיל מבוצע באופן טבעי יותר, מה שמפחית את הסיכון לפציעות, במיוחד אם מבוצע בצורה נכונה.</p>
+
+      <h3>5. שיפור יכולת הלב והריאות</h3>
+      <p>אימוני קליסטניקס לא רק משפרים את הכוח הפיזי שלך, אלא גם את הכושר האירובי שלך. תרגילים כמו אימוני אינטרוולים עם משקל גוף יכולים להעלות את קצב הלב ולחזק את מערכת הנשימה, מה שיתרום לשיפור הבריאות הכללית ולכושר גופני גבוה יותר.</p>
+
+      <h3>6. גישה אישית ואישית לכל אחד</h3>
+      <p>קליסטניקס הוא סגנון אימון שניתן להתאים אישית לכל אדם. תוכל להתחיל מרמות קלות ולהתפתח בהדרגה לרמות מתקדמות יותר. אם אתה מתחיל, ישנם תרגילים מותאמים לרמתך, ואם אתה מתקדם, תוכל להעלות את הקושי ולהתמודד עם אתגרים חדשים.</p>
+
+      <h3>7. שיפור הביטחון העצמי</h3>
+      <p>ביצוע תרגילים שמחייבים שליטה מלאה על הגוף מסייע לך להרגיש יותר בטוח בעצמך ולפני אחרים. כאשר אתה רואה שיפור ביכולת שלך לבצע תרגילים מסוימים, זה נותן תחושת הישג שמחזקת את הביטחון העצמי שלך.</p>
+
+      <h3>8. תועלת מוחית</h3>
+      <p>אימוני קליסטניקס לא רק משפרים את הגוף, אלא גם את הנפש. ההתמקדות בהכשרת הגוף כיחידה אחת ומודעות לתנועה מסייעת לשיפור המצב הנפשי והפחתת מתח.</p>
+
+      <a href="index.html" class="back-btn">חזור לדף הבית</a>
+  </div>
+
+    <footer>
+        <p>&copy; 2025 כל שמורות לנחמן בראשי</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
