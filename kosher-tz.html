@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר</title>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            direction: rtl;
+            padding: 20px;
+        }
+        .contact-container {
+            max-width: 400px;
+            margin: auto;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .contact-container h2 {
+            color: #ff4500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #333;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ff4500;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff5733;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #ff9800;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>צור קשר</h2>
+        <p>ניתן ליצור קשר בנושאים הבאים:</p>
+        <ul class="faq-list">
+            <li>שאלות על תוכניות האימון</li>
+            <li>תמיכה טכנית באתר</li>
+            <li>שיתופי פעולה</li>
+        </ul>
+        <form action="send_email.php" method="post">
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="email" name="email" placeholder="אימייל" required>
+            <textarea name="message" placeholder="ההודעה שלך" required></textarea>
+            <button type="submit">שלח הודעה</button>
+        </form>
+        <div class="social-links">
+            <p>או צרו קשר דרך:</p>
+            <a href="mailto:your-email@example.com">אימייל</a> | 
+            <a href="https://instagram.com/your_instagram" target="_blank">אינסטגרם</a>
+        </div>
+    </div>
+
+<!-- Footer רספונסיבי עם נקודות מפרידות -->
+<footer style="background-color: #222; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: 1.1em;">
+        <a href="index.html" style="color: #FF9800; text-decoration: none;">דף הבית</a>
+        <span style="color: white;">•</span>
+        <a href="https://www.instagram.com/barashi227?igsh=MTU2ZDlzeDAxa3F0cQ==" style="color: #FF9800; text-decoration: none;">האינסטגרם שלי</a>
+        <span style="color: white;">•</span>
+        <a href="copyright.html" style="color: #FF9800; text-decoration: none;">זכויות יוצרים</a>
+    </div>
+    <p style="margin-top: 10px;">© 2025 כל הזכויות שמורות</p>
+</footer>
+
+
+</body>
+</html>
+
+
