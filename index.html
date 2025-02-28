@@ -10,25 +10,25 @@
             font-family: "Roboto", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: white;
+            background-color: #000000;
+            color: #FFFFFF;
             direction: rtl;
             text-align: right;
         }
-
+        
         /* סרגל ניווט */
         nav {
             position: fixed;
             top: 0;
-            right: -250px; /* התפריט מוסתר בצד */
+            right: -250px;
             height: 100%;
             width: 250px;
-            background-color: rgba(255, 87, 34, 0.9);
+            background-color: rgba(211, 47, 47, 0.9);
             transition: 0.3s;
             padding-top: 60px;
             z-index: 1000;
         }
-
+        
         nav ul {
             list-style: none;
             padding: 0;
@@ -37,24 +37,24 @@
             flex-direction: column;
             align-items: center;
         }
-
+        
         nav ul li {
             margin: 15px 0;
         }
-
+        
         nav ul li a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.5em;
             padding: 10px;
             transition: 0.3s;
         }
-
+        
         nav ul li a:hover {
-            color: #ffcc00;
+            color: #FF9800;
         }
-
+        
         /* כותרת ראשית */
         #header-section {
             position: relative;
@@ -65,118 +65,131 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 10px rgba(255, 152, 0, 0.7);
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7);
             padding: 20px;
         }
-
+        
         #header-section div {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 8px;
         }
-
+        
         .h1-head {
             font-size: 3.5em;
             margin: 0;
         }
+        
+/* כפתור תפריט */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #D32F2F;
+    color: white;
+    border: 2px solid #D32F2F; /* הוספנו גבול לאפקט נקי יותר */
+    font-size: 1.5em;
+    padding: 12px 20px; /* ריפוד ישר */
+    border-radius: 5px; /* פינות מעט מעוגלות אך לא עגולות מדי */
+    cursor: pointer;
+    z-index: 1100;
+    transition: background-color 0.3s, transform 0.3s; /* אפקט מעבר חלק */
+}
 
-        /* כפתורים */
-        .exercise-btn {
-            color: white;
-            padding: 40px 30px;
-            font-size: 1.6em;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 12px;
+/* אפקט כשעוברים עם העכבר */
+.menu-btn:hover {
+    background-color: #FF9800; /* צבע כתום בהיר כשעוברים עם העכבר */
+    transform: scale(1.1); /* שינוי בגודל כשלוחצים */
+}
+
+        /* כפתורי תוכן */
+        .content-section {
+            padding: 40px;
             text-align: center;
-            display: inline-block;
+        }
+        .content-section h2 {
+            color: #FF9800;
+            font-size: 2.5em;
+        }
+        .content-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+        }
+        /* טופס צור קשר*/
+    
+        .contact-form {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
             width: 100%;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-            border: 2px solid transparent;
-            margin: 15px 0;
-            background-image: url('path-to-your-image.jpg'); /* תמונה בכפתור */
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-            background-color: rgba(0, 0, 0, 0.5);
+            max-width: 300px;
         }
-
-        /* אפקט hover */
-        .exercise-btn:hover {
-            transform: scale(1.05);
-            background-color: rgba(255, 87, 34, 1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            border: 2px solid #ffcc00;
+        .contact-form h2 {
+            text-align: center;
+            color: #ff4500;
         }
-
-        /* כפתור כשיש אוברליי */
-        .exercise-btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .contact-form input, .contact-form textarea {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: -1;
-        }
-
-        /* כפתור לפתיחת התפריט */
-        .menu-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #ff5722;
-            color: white;
+            padding: 10px;
+            margin-top: 5px;
+            background: #333333;
             border: none;
-            font-size: 1.5em;
-            padding: 15px;
-            border-radius: 50%;
+            border-radius: 5px;
+            color: white;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background: #ff4500;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            z-index: 1100;
+            transition: 0.3s;
+        }
+        .contact-form button:hover {
+            background: #ff5733;
+        }
+        .down-web {
+            height: 400px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* רספונסיביות */
-        @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-            }
-
-            /* סרגל ניווט */
-            nav {
-                right: -250px; /* התפריט מוסתר */
-            }
-
-            /* כפתורים */
-            .exercise-btn {
-                font-size: 1.2em; /* הקטנה לגודל נוח יותר במובייל */
-                padding: 20px 25px; /* התאמת גודל הכפתור למובייל */
-                width: 90%; /* שימוש בשטח רחב יותר */
-            }
-
-            /* כותרת ראשית */
-            #header-section {
-                height: 60vh; /* צמצום גובה הכותרת במובייל */
-            }
-
-            .h1-head {
-                font-size: 2em; /* גודל טקסט קטן יותר למובייל */
-            }
-
-            /* סרגל ניווט במובייל */
-            nav ul li a {
-                font-size: 1.2em;
-            }
-
-            .menu-btn {
-                font-size: 1.8em; /* כפתור התפריט יהיה גדול יותר */
-                padding: 18px;
-            }
+        .hr-teur1 {
+            width: 40%;
         }
+                .hr-teur2 {
+            width: 50%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .training-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.training-link:hover {
+    transform: scale(1.2);
+    color: #FF9800;
+}
+
     </style>
 </head>
 <body>
@@ -187,9 +200,10 @@
     <!-- סרגל ניווט -->
     <nav id="sideNav">
         <ul>
-            <li><a href="index.html">תוכניות אימון</a></li>
-            <li><a href="https://theroadto.co.il/collections/shop?srsltid=AfmBOorSux_3fxLk1wQfnH-k9syuGXQfQeNWeSabpyNdBWUeh6mvB1UJ">מוצרים</a></li>
+            <li><a href="#programs-samples">תוכניות אימון</a></li> <!-- ככה זה יגלול לטעימות -->
+            <li><a href="https://theroadto.co.il/collections/shop?srsltid=AfmBOorbOrkkVtY3BWPGAUAc7oYJaY0Kd_yUwbfaXWVF3-hC6wLlpP5F">מוצרים</a></li>
             <li><a href="kosher-o.html">על קליסטניקס</a></li>
+            <li><a href="#contact-form-section">צור קשר</a></li> <!-- ככה זה יגלול לחלק של הטופס -->
         </ul>
     </nav>
 
@@ -197,31 +211,82 @@
     <div id="header-section">
         <div>
             <h1 class="h1-head">תוכניות אימון קליסטניקס</h1>
+            <hr>
             <p>באתר הזה תמצאו תוכניות אימון מקצועיות עם הסברים מפורטים.</p>
         </div>
     </div>
 
-    <!-- כפתורים -->
-    <div class="content">
-        <a href="kosher-1.html">
-            <button class="exercise-btn" style="background-image: url('muscle-group.jpg');">אימון לפי קבוצות שרירים</button>
-        </a>
-        <a href="kosher-2.html">
-            <button class="exercise-btn" style="background-image: url('specific-exercises.jpg');">אימון לתרגילים ספציפיים</button>
-        </a>
+    <!-- תיאור תוכן מהדפים השונים -->
+    <div class="content-section"  id="programs-samples">
+        <h2><a href="kosher-1.html" class="training-link">אימון לעבודה על השרירים</a></h2>
+        <hr class="hr-teur1">
+        <br>
+        <p>אימון לעבודה ספציפית על השרירים ופיתוח גוף</p>
     </div>
 
+    <div class="content-section">
+        <h2><a href="kosher-1.htm2" class="training-link">אימון לעבודה על תרגילים ספציפיים</a></h2>
+        <hr class="hr-teur2">
+        <br>
+        <p>אימון לעבודה ספציפית לתרגילי קליסטניקס</p>
+    </div>
+    
+    <div class="content-section">
+        <h2><a href="https://theroadto.co.il/collections/shop?srsltid=AfmBOorbOrkkVtY3BWPGAUAc7oYJaY0Kd_yUwbfaXWVF3-hC6wLlpP5F" class="training-link">מוצרים מומלצים</a></h2>
+        <hr class="hr-teur2">
+        <br>
+        <p>מצאו ציוד איכותי לאימוני קליסטניקס, כמו טבעות, מקבילים וגומיות התנגדות.</p>
+    </div>
+
+    <div class="content-section">
+        <h2><a href="kosher-o.html" class="training-link">למה דווקה קליסטניקס?</a></h2>
+        <hr class="hr-teur1">
+        <br>
+        <p>קליסטניקס משפר כוח, יציבות וגמישות, ללא צורך בחדר כושר!</p>
+    </div>
+
+<!-- החלק למטה של האתר-->
+<div class="down-web" id="contact-form-section">
+    <!-- טופס צור קשר-->
+    <form class="contact-form">
+        <h2>צור קשר</h2>
+        <label for="name">שם מלא</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">אימייל</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="message">הודעה</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+    
+        <button type="submit">שלח</button>
+    </form>
+</div>
+
+
     <script>
-        // פונקציה לפתיחת התפריט
         function toggleNav() {
             var sideNav = document.getElementById("sideNav");
             if (sideNav.style.right === "0px") {
-                sideNav.style.right = "-250px"; // אם התפריט פתוח, נסגור אותו
+                sideNav.style.right = "-250px";
             } else {
-                sideNav.style.right = "0"; // אם התפריט סגור, נפתח אותו
+                sideNav.style.right = "0";
             }
         }
+    
+        // פונקציה לסגירת התפריט אם לוחצים מחוץ אליו
+        document.addEventListener("click", function (event) {
+            var sideNav = document.getElementById("sideNav");
+            var menuBtn = document.querySelector(".menu-btn");
+    
+            // בודק אם הלחיצה הייתה מחוץ לתפריט ולכפתור
+            if (sideNav.style.right === "0px" && 
+                !sideNav.contains(event.target) && 
+                !menuBtn.contains(event.target)) {
+                sideNav.style.right = "-250px";
+            }
+        });
     </script>
-
+    
 </body>
 </html>
