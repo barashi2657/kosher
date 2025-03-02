@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מוצרי קליסטניקס</title>
+    <style>
+        /* רקע כהה, גווני שחור וכתום */
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* סרגל ניווט */
+        nav {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            height: 100%;
+            width: 250px;
+            background-color: rgba(211, 47, 47, 0.9);
+            transition: 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FF9800;
+        }
+        /* כרטיסי מוצרים */
+        .product-card {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+            color: #FF9800;
+        }
+
+        .product-card p {
+            font-size: 1.1em;
+            color: #bbb;
+        }
+
+        .product-card a {
+    color: #FF9800;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 12px 20px;
+    border: 2px solid #FF9800;
+    border-radius: 5px;
+    background-color: transparent;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .product-card a:hover {
+    color: #fff;
+    background-color: #FF5722;
+    border-color: #FF5722;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+        /* גריד למוצרים */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px;
+        }
+
+        /* כותרות וקטעים */
+        h1, .hero-section p {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FF9800;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            color: #bbb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FF9800;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #ff5722;
+        }
+
+        /* סגנון כפתור תפריט */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #D32F2F;
+            color: white;
+            border: 2px solid #D32F2F;
+            font-size: 1.5em;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1100;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: #FF9800;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- כפתור לפתיחת התפריט -->
+    <button class="menu-btn" onclick="toggleNav()">☰</button>
+
+    <!-- סרגל ניווט -->
+    <nav id="sideNav">
+      <ul>
+          <li><a href="#programs-samples">תוכניות אימון</a></li>
+          <li><a href="kosher-m.html">מוצרים</a></li>
+          <li><a href="kosher-o.html">על קליסטניקס</a></li>
+          <li><a href="kosher-tz.html">צור קשר</a></li>
+      </ul>
+  </nav>
+
+    <!-- כותרת -->
+    <section class="hero-section">
+        <h1>מוצרי קליסטניקס איכותיים</h1>
+        <p>מצא את הציוד המושלם לאימון שלך</p>
+    </section>
+
+    <!-- מוצרים -->
+    <section class="product-container">
+        <!-- מוצר 1 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 1">
+            <h3>טבעות קליסטניקס</h3>
+            <p>טבעות קליסטניקס באיכות גבוהה לאימון ידיים ושרירים בגוף העליון.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 2 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 2">
+            <h3>מקבילים</h3>
+            <p>מקבילים לאימון חזה וידיים, חזק ועמיד.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 3 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 3">
+            <h3>גומיות התנגדות</h3>
+            <p>גומיות התנגדות לאימון השרירים בצורה מקצועית.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 4 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 4">
+            <h3>רצועות אחיזה</h3>
+            <p>רצועות אחיזה לאימון ידיים וידיעה.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 5 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 5">
+            <h3>כפפות אימון</h3>
+            <p>כפפות לאימון קליסטניקס עם תמיכה ועמידות.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 6 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 6">
+            <h3>ספסל לתרגול</h3>
+            <p>ספסל מקצועי לתרגול וקליסטניקס.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 7 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 7">
+            <h3>חبل קפיצה</h3>
+            <p>חבל קפיצה איכותי לאימון כושר שורף קלוריות.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 8 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 8">
+            <h3>הנד-פראס</h3>
+            <p>הנד-פראס לאימון ידיים ושרירים בקליסטניקס.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+
+        <!-- מוצר 9 -->
+        <div class="product-card">
+            <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 9">
+            <h3>הולדר למשקולות</h3>
+            <p>הולדר מקצועי למשקולות לאימון כוח.</p>
+            <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer style="background-color: #111; padding: 20px 0; text-align: center; color: white; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+      <a href="kosher-tz.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">צור קשר</a>
+      <a href="kosher-tnaei.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">תנאי שימוש</a>
+      <a href="kosher-mediniut.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">מדיניות פרטיות</a>
+  </div>
+  <p style="font-size: 14px; margin-top: 20px; color: #FF9800;">© 2025 כל הזכויות שמורות לנחמן בראשי</p>
+</footer>
+
+
+    <script>
+        function toggleNav() {
+            var sideNav = document.getElementById("sideNav");
+            if (sideNav.style.right === "0px") {
+                sideNav.style.right = "-250px";
+            } else {
+                sideNav.style.right = "0";
+            }
+        }
+
+        // פונקציה לסגירת התפריט אם לוחצים מחוץ אליו
+        document.addEventListener("click", function (event) {
+            var sideNav = document.getElementById("sideNav");
+            var menuBtn = document.querySelector(".menu-btn");
+
+            // בודק אם הלחיצה הייתה מחוץ לתפריט ולכפתור
+            if (sideNav.style.right === "0px" &&
+                !sideNav.contains(event.target) &&
+                !menuBtn.contains(event.target)) {
+                sideNav.style.right = "-250px";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
