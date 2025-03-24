@@ -1,19 +1,185 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>צור קשר</title>
+    <title>Document</title>
+</head>
     <style>
-        body {
-            font-family: "Roboto", sans-serif;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            direction: rtl;
-            padding: 20px;
-        }
-        .contact-container {
+/* עיצוב כללי */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+    direction: rtl;
+    text-align: right;
+}
+/* סרגל ניווט */
+.nav-mobile{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav ul li {
+    margin: 15px 0;
+}
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 10px;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #FF9800;
+}
+/* כפתור תפריט */
+.menu-btn {
+    display: none; /* בכדי שלא יופיע על מסכים גדולים */
+    font-size: 30px;
+    color: rgb(255, 145, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-top: 5px;
+    z-index: 1000;
+    position: fixed;
+    text-align: center;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+    margin: 20px;
+    display: none;
+}
+/* אפקט כשעוברים עם העכבר */
+.menu-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+        /* בכדי להסתיר את כפתור הניווט במחשב */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+    .nav-mobile{
+        display: block;
+    }
+    .nav-pc {
+        display: none;
+    }
+}
+    
+
+/* סרגל ניווט במחשב  */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px 30px;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+.a-logo{
+    font-weight: bold;
+    color: #ff5733;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding-left: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #00aaff;
+}
+
+.button-2 {
+    background-color: #ff5733;
+    color: white;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-2:hover {
+    background-color: #00aaff; /* שינוי צבע כפתור בלחיצה */
+    transform: translateY(-3px); /* אפקט קפיצה קטן של הכפתור */
+}
+
+.button-2:active {
+    transform: translateY(1px); /* אפקט "לחיצה" על הכפתור */
+}
+.nav-pc{
+    width: 96.5%;
+    height: 50px;
+}
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff5733;
+    position: relative;
+    float: left;
+    margin-top: 6px;
+}
+
+.button-start{
+    width: 20%;
+    float: right;
+    position: relative;
+    margin-top: 6px;
+}
+.ul-div{
+    width: 480px;
+    margin: auto;
+}
+.div-form{
+    text-align: center;
+    direction: rtl;
+}
+.div-flex{
+    display: flex;
+    height: 100px;
+}
+
+.contact-container {
             max-width: 400px;
             margin: auto;
             background: #222;
@@ -35,7 +201,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background: #ff4500;
+            background: #ff5100;
             border: none;
             border-radius: 5px;
             color: white;
@@ -60,43 +226,67 @@
 }
 
     </style>
-</head>
 <body>
-    <div class="contact-container">
-        <h2>צור קשר</h2>
-        <p>ניתן ליצור קשר בנושאים הבאים:</p>
-        <ul class="faq-list">
-            <li>שאלות על תוכניות האימון</li>
-            <li>תמיכה טכנית באתר</li>
-            <li>שיתופי פעולה</li>
+
+    <!-- כפתור לפתיחת התפריט בטלפון-->
+    <button class="menu-btn" onclick="toggleNav()">☰</button>
+
+    <!-- סרגל ניווט למובייל-->
+    <nav id="sideNav" class="nav-mobile">
+        <ul>
+            <li><a href="#programs-samples">תוכניות אימון</a></li>
+            <li><a href="kosher-m.html">מוצרים</a></li>
+            <li><a href="kosher-o.html">על קליסטניקס</a></li>
+            <li><a href="kosher-tz.html">צור קשר</a></li>
         </ul>
-        <form action="send_email.php" method="post">
-            <input type="text" name="name" placeholder="שם מלא" required>
-            <input type="email" name="email" placeholder="אימייל" required>
-            <textarea name="message" placeholder="ההודעה שלך" required></textarea>
-            <button type="submit">שלח הודעה</button>
-        </form>
-        <div class="social-links">
-            <p>או צרו קשר דרך:</p>
-            <a href="mailto:your-email@example.com">אימייל</a> | 
-            <a href="https://instagram.com/your_instagram" target="_blank">אינסטגרם</a>
+    </nav>
+
+    <header class="nav-pc">
+        <div class="logo"><a class="a-logo" href="#">calisthenics PRO</a></div>
+        <div class="button-start"><button class="button-2">התחל עכשיו</button></div>
+    <div class="ul-div">
+        <ul class="nav-links">
+            <li><a href="#programs-samples">תוכניות אימון</a></li>
+            <li><a href="kosher-m.html">מוצרים</a></li>
+            <li><a href="kosher-o.html">על קליסטניקס</a></li>
+            <li><a href="kosher-tz.html">צור קשר</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <div class="div-flex"></div>
+    <div class="div-form">
+        <div class="contact-container">
+            <h2>צור קשר</h2>
+            <p>ניתן ליצור קשר בנושאים הבאים:</p>
+            <ul class="faq-list">
+                <li>שאלות על תוכניות האימון</li>
+                <li>תמיכה טכנית באתר</li>
+                <li>שיתופי פעולה</li>
+            </ul>
+            <form action="send_email.php" method="post">
+                <input type="text" name="name" placeholder="שם מלא" required>
+                <input type="email" name="email" placeholder="אימייל" required>
+                <textarea name="message" placeholder="ההודעה שלך" required></textarea>
+                <button type="submit">שלח הודעה</button>
+            </form>
+            <div class="social-links">
+                <p>או צרו קשר דרך:</p>
+                <a href="mailto:your-email@example.com">אימייל</a> | 
+                <a href="https://instagram.com/your_instagram" target="_blank">אינסטגרם</a>
+            </div>
         </div>
     </div>
 
-<!-- Footer רספונסיבי עם נקודות מפרידות -->
-<footer style="background-color: #222; color: white; text-align: center; padding: 20px; margin-top: 50px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: 1.1em;">
-        <a href="index.html" style="color: #FF9800; text-decoration: none;">דף הבית</a>
-        <span style="color: white;">•</span>
-        <a href="https://www.instagram.com/barashi227?igsh=MTU2ZDlzeDAxa3F0cQ==" style="color: #FF9800; text-decoration: none;">האינסטגרם שלי</a>
-        <span style="color: white;">•</span>
-        <a href="copyright.html" style="color: #FF9800; text-decoration: none;">זכויות יוצרים</a>
+    <!-- Footer -->
+<footer style="background-color: #111; padding: 20px 0; text-align: center; color: white; margin-top: 40px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+        <a href="kosher-tz.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">צור קשר</a>
+        <a href="kosher-tnaei.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">תנאי שימוש</a>
+        <a href="kosher-mediniut.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">מדיניות פרטיות</a>
     </div>
-    <p style="margin-top: 10px;">© 2025 כל הזכויות שמורות</p>
+    <p style="font-size: 14px; margin-top: 20px; color: #FF9800;">© 2025 כל הזכויות שמורות לנחמן בראשי</p>
 </footer>
-
 
 </body>
 </html>
-
-
