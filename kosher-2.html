@@ -54,14 +54,14 @@ nav ul li a:hover {
 .menu-btn {
     display: none; /* בכדי שלא יופיע על מסכים גדולים */
     font-size: 30px;
-    color: #ffffff;
-    background-color: transparent;
+    color: rgb(255, 145, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     cursor: pointer;
     padding: 10px;
     padding-top: 5px;
-    z-index: 100;
-    position: absolute;
+    z-index: 1000;
+    position: fixed;
     text-align: center;
     top: 20px;
     right: 20px;
@@ -73,7 +73,7 @@ nav ul li a:hover {
 }
 /* אפקט כשעוברים עם העכבר */
 .menu-btn:hover {
-    background-color: #969696;
+    background-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
 }
 
@@ -198,7 +198,7 @@ button:active {
     <!-- סרגל ניווט למובייל-->
     <nav id="sideNav" class="nav-mobile">
         <ul>
-            <li><a href="#programs-samples">תוכניות אימון</a></li>
+            <li><a href="index.html">תוכניות אימון</a></li>
             <li><a href="kosher-m.html">מוצרים</a></li>
             <li><a href="kosher-o.html">על קליסטניקס</a></li>
             <li><a href="kosher-tz.html">צור קשר</a></li>
@@ -210,7 +210,7 @@ button:active {
       <div class="button-start"><button>התחל עכשיו</button></div>
   <div class="ul-div">
       <ul class="nav-links">
-          <li><a href="#programs-samples">תוכניות אימון</a></li>
+          <li><a href="index.html">תוכניות אימון</a></li>
           <li><a href="kosher-m.html">מוצרים</a></li>
           <li><a href="kosher-o.html">על קליסטניקס</a></li>
           <li><a href="kosher-tz.html">צור קשר</a></li>
@@ -228,7 +228,7 @@ button:active {
       </div>
   </div>
  
-
+  <h3 style="text-align: center;">עדיין אין תרגילים</h3>
 
 
 <!-- Footer -->
