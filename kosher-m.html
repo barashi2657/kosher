@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="he">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>מוצרי קליסטניקס</title>
-    <style>
-/* עיצוב כללי */
-body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #FFFFFF;
-    direction: rtl;
-    text-align: right;
-}
 
-/* סרגל ניווט */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות</title>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #FFFFFF;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #111;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2 {
+            color: #FF9800;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #FF9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #FF5733;
+        }
+
+
+        /* סרגל ניווט */
 .nav-mobile{
     position: fixed;
     top: 0;
@@ -171,202 +202,87 @@ button:active {
         display: none;
     }
 }
-
-/* כרטיסי מוצרים */
-.product-card {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: 0.3s ease;
-}
-.product-card img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-}
-.product-card h3 {
-    font-size: 1.5em;
-    margin-top: 15px;
-    color: #FF9800;
-}
-.product-card p {
-    font-size: 1.1em;
-    color: #bbb;
-}
-
-.product-card a {
-    color: #FF9800;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-    padding: 12px 20px;
-    border: 2px solid #FF9800;
-    border-radius: 5px;
-    background-color: transparent;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    font-size: 1.1em;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-}
-
-.product-card a:hover {
-    color: #fff;
-    background-color: #FF5722;
-    border-color: #FF5722;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* גריד למוצרים */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px;
-}
-.for-flex {
-  display: flex;
-}
-h1 {
-  text-align: center;
-  color: #ff7b00;
-  font-size: 3em;
-  padding-top: 70px;
-}
-p {
-  color: #fff;
-  font-size: 17px;
-  text-align: center;
-}
     </style>
-  </head>
-  <body>
-    <!-- כפתור לפתיחת התפריט בטלפון-->
-    <button class="menu-btn" onclick="toggleNav()">☰</button>
+</head>
 
-    <!-- סרגל ניווט למובייל-->
-    <nav id="sideNav" class="nav-mobile">
+<body>
+
+
+        <!-- כפתור לפתיחת התפריט בטלפון-->
+        <button class="menu-btn" onclick="toggleNav()">☰</button>
+
+        <!-- סרגל ניווט למובייל-->
+        <nav id="sideNav" class="nav-mobile">
+            <ul>
+                <li><a href="index.html">תוכניות אימון</a></li>
+                <li><a href="kosher-m.html">מוצרים</a></li>
+                <li><a href="kosher-o.html">על קליסטניקס</a></li>
+                <li><a href="kosher-tz.html">צור קשר</a></li>
+            </ul>
+        </nav>
+    
+        <header class="nav-pc">
+          <div class="logo"><a class="a-logo" href="#">kosher</a></div>
+          <div class="button-start"><button>התחל עכשיו</button></div>
+      <div class="ul-div">
+          <ul class="nav-links">
+              <li><a href="index.html">תוכניות אימון</a></li>
+              <li><a href="kosher-m.html">מוצרים</a></li>
+              <li><a href="kosher-o.html">על קליסטניקס</a></li>
+              <li><a href="kosher-tz.html">צור קשר</a></li>
+          </ul>
+      </div>
+      </header>
+
+    <div class="container">
+        <h1>מדיניות פרטיות</h1>
+
+        <p>נכבד/ת, אנו ב[שם האתר שלך] (להלן: "האתר") מחויבים לשמירה על פרטיותך וביטחונך בעת השימוש באתר. אנו אוספים ומשתמשים במידע בהתאם למדיניות פרטיות זו. מדיניות זו מפרטת את האופן שבו אנו אוספים, משתמשים ומגנים על המידע האישי שלך כאשר אתה מבקר או משתמש באתר.</p>
+
+        <h2>איסוף מידע</h2>
+        <p>בעת השימוש שלך באתר, אנו עשויים לאסוף מידע אישי שנמסר באופן יזום על ידך, כגון פרטי קשר (שם, דוא"ל), או מידע שנאסף באופן אוטומטי על ידי האתר, כגון כתובת ה-IP שלך, סוג הדפדפן שלך, המכשיר בו אתה משתמש ועוד.</p>
+
+        <h2>שימוש במידע</h2>
+        <p>המידע האישי שנאסף משמש למטרות הבאות:</p>
         <ul>
-            <li><a href="index.html">תוכניות אימון</a></li>
-            <li><a href="kosher-m.html">מוצרים</a></li>
-            <li><a href="kosher-o.html">על קליסטניקס</a></li>
-            <li><a href="kosher-tz.html">צור קשר</a></li>
+            <li>יצירת קשר עם המשתמש במקרה של בעיות או פניות.</li>
+            <li>שליחת עדכונים או מידע אודות האתר ושירותיו.</li>
+            <li>לשם שיפור חוויית המשתמש באתר.</li>
         </ul>
-    </nav>
 
-    <header class="nav-pc">
-      <div class="logo"><a class="a-logo" href="#">kosher</a></div>
-      <div class="button-start"><button>התחל עכשיו</button></div>
-  <div class="ul-div">
-      <ul class="nav-links">
-          <li><a href="index.html">תוכניות אימון</a></li>
-          <li><a href="kosher-m.html">מוצרים</a></li>
-          <li><a href="kosher-o.html">על קליסטניקס</a></li>
-          <li><a href="kosher-tz.html">צור קשר</a></li>
-      </ul>
-  </div>
-  </header>
+        <h2>שיתוף המידע</h2>
+        <p>אנו לא נשתף את המידע האישי שלך עם צדדים שלישיים, אלא אם כן:</p>
+        <ul>
+            <li>הדבר נדרש על פי חוק או על פי צו שיפוטי.</li>
+            <li>הדבר הכרחי כדי לספק את השירותים באתר.</li>
+        </ul>
 
+        <h2>אבטחת המידע</h2>
+        <p>אנו עושים כל מאמץ לשמור על המידע האישי שלך מאובטח באמצעות אמצעים טכנולוגיים וארגוניים, אך לא ניתן להבטיח שהמידע יישאר חסוי לחלוטין מול מתקפות או גישות בלתי מורשות.</p>
 
-    <!-- בשביל שה-header לא יהיה דבוק למעלה -->
-    <div class="for-flex"> </div>
-    <div class="header-h1">
-      <h1>מוצרי קליסטניקס איכותיים</h1>
-      <p>פה תוכלו למצוא קישורים למוצרים איכותיים מעלי אקספרס של קליסטניקס</p>
+        <h2>שימוש בעוגיות</h2>
+        <p>האתר עשוי להשתמש בעוגיות (Cookies) כדי לשפר את חוויית הגלישה שלך ולהתאים את האתר להעדפותיך. עוגיות אלו עשויות לאסוף מידע אודות השימוש שלך באתר.</p>
+
+        <h2>זכויותיך</h2>
+        <p>אתה זכאי לעיין, לעדכן או למחוק את המידע האישי שלך שנשמר אצלנו. אם ברצונך לעשות זאת, אנא פנה אלינו דרך דף "צור קשר".</p>
+
+        <h2>שינויים במדיניות הפרטיות</h2>
+        <p>אנו שומרים לעצמנו את הזכות לעדכן ולשנות את מדיניות פרטיות זו מעת לעת. כל שינוי יפורסם באתר.</p>
+
+        <h2>יצירת קשר</h2>
+        <p>לכל שאלה או בקשה בנוגע למדיניות פרטיות זו, ניתן לפנות אלינו דרך דף <a href="kosher-tz.html">צור קשר</a> באתר.</p>
     </div>
 
-  <!-- מוצרים -->
-  <section class="product-container">
-      <!-- מוצר 1 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 1">
-          <h3>טבעות קליסטניקס</h3>
-          <p>טבעות קליסטניקס באיכות גבוהה לאימון ידיים ושרירים בגוף העליון.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 2 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 2">
-          <h3>מקבילים</h3>
-          <p>מקבילים לאימון חזה וידיים, חזק ועמיד.</p>
-          <a href="https://s.click.aliexpress.com/e/_oB5pDUb" target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 3 -->
-      <div class="product-card">
-          <img src="https://d2d22nphq0yz8t.cloudfront.net/6cbcadef-96e0-49e9-b3bd-9921afe362db/www.payngo.co.il/media/maymuzan/_-_2.jpg" alt="מוצר 3">
-          <h3>גומיות התנגדות</h3>
-          <p>גומיות התנגדות לאימון השרירים בצורה מקצועית.</p>
-          <a href="https://s.click.aliexpress.com/e/_oCICcC4" target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 4 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 4">
-          <h3>רצועות אחיזה</h3>
-          <p>רצועות אחיזה לאימון ידיים וידיעה.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 5 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 5">
-          <h3>כפפות אימון</h3>
-          <p>כפפות לאימון קליסטניקס עם תמיכה ועמידות.</p>
-          <a href="https://s.click.aliexpress.com/e/_oD1bGNZ" target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 6 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 6">
-          <h3>ספסל לתרגול</h3>
-          <p>ספסל מקצועי לתרגול וקליסטניקס.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 7 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 7">
-          <h3>חבל קפיצה</h3>
-          <p>חבל קפיצה איכותי לאימון כושר שורף קלוריות.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 8 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 8">
-          <h3>הנד-פראס</h3>
-          <p>הנד-פראס לאימון ידיים ושרירים בקליסטניקס.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-
-      <!-- מוצר 9 -->
-      <div class="product-card">
-          <img src="https://www.gadgety.co.il/wp-content/themes/main/thumbs/2022/08/aliexpress-logo.jpg" alt="מוצר 9">
-          <h3>הולדר למשקולות</h3>
-          <p>הולדר מקצועי למשקולות לאימון כוח.</p>
-          <a href="https://www.aliexpress.com/item/..." target="_blank">קנה עכשיו</a>
-      </div>
-  </section>
-
-
-
-    <!-- Footer -->
+<!-- Footer -->
 <footer style="background-color: #111; padding: 20px 0; text-align: center; color: white; margin-top: 40px;">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-      <a href="kosher-tz.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">צור קשר</a>
-      <a href="kosher-tnaei.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">תנאי שימוש</a>
-      <a href="kosher-mediniut.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">מדיניות פרטיות</a>
-  </div>
-  <p style="font-size: 14px; margin-top: 20px; color: #FF9800;">© 2025 כל הזכויות שמורות לנחמן בראשי</p>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+        <a href="kosher-tz.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">צור קשר</a>
+        <a href="kosher-tnaei.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">תנאי שימוש</a>
+        <a href="index.html" style="color: #FF9800; text-decoration: none; font-size: 16px; font-weight: bold;">דף הבית</a>
+    </div>
+    <p style="font-size: 14px; margin-top: 20px; color: #FF9800;">© 2025 כל הזכויות שמורות לנחמן בראשי</p>
 </footer>
 
-  </body>
+</body>
+
 </html>
